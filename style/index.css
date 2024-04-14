@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+    color: #016795;
+    font-family: 'Roboto', sans-serif;
+}
+
+#photo-de-profil{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+body{
+    background-color: #1B2431;
+}

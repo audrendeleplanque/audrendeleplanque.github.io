@@ -1,0 +1,3 @@
+bleu foncé : #1B2431
+bleu clair : #1E488F
+bleu ciel : #016795
