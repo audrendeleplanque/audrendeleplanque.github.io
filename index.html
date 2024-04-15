@@ -6,14 +6,17 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
   <script  src="./script.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./skill.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/skill.css">
+  <link rel="stylesheet" href="style/exp-pro.css">
+  <link rel="stylesheet" href="style/projet.css">
+    <link rel="stylesheet" href="style/link.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <!-- Hero -->
-  <section class="et-hero-tabs">
+  <section class="et-hero-tabs scroll-animate">
     <img id="photo" src="images/1713171498769.jpg" alt="photo-de-profil">
     <h1>DELEPLANQUE Audren</h1>
     <h2>20 ans</h2>
@@ -24,18 +27,17 @@
       <a class="et-hero-tab" href="#tab-exp-pro">Expériences professionnelles</a>
       <a class="et-hero-tab" href="#tab-projets">Projets</a>
       <a class="et-hero-tab" href="#tab-liens">Liens</a>
-      <a class="et-hero-tab" href="#tab-contact">Contact</a>
       <span class="et-hero-tab-slider"></span>
     </div>
   </section>
 
   <!-- Main -->
   <main class="et-main">
-    <section class="et-slide" id="tab-presentation">
+    <section class="et-slide scroll-animate" id="tab-presentation">
       <h1>Présentation</h1>
       <h2>Je suis un étudiant en première de cycle d'ingenieur (Bac +3) à l'ISEN à Lille. Toujours passioné par l'informatique et la programmation, je cherche activement un poste dans ce secteur.</h2>
     </section>
-    <section class="et-slide" id="tab-competences">
+    <section class="et-slide scroll-animate" id="tab-competences">
       <h1>Compétences</h1>
       <h2>Langues</h2>
       <div class="progress-bar">
@@ -45,8 +47,8 @@
       </div>
 
       <div class="progress-bar">
-        <div class="progress" style="width: 70%;">
-          <span class="progress-percentage">Anglais - 70% (B2)</span>
+        <div class="progress" style="width: 65%;">
+          <span class="progress-percentage">Anglais - 65% (B2)</span>
         </div>
       </div>
       <h2>Prgrammation</h2>
@@ -98,24 +100,65 @@
         </ul>
       </div>
     </section>
-    <section class="et-slide" id="tab-exp-pro">
-      <h1>Expériences professionnelles</h1>
-      <h2>something about react</h2>
+    <section class="et-slide scroll-animate" id="tab-exp-pro">
+      <h1 class="title-exp">Expériences professionnelles</h1>
+      <div>
+        <ul>
+          <li class="metier">
+            <h2>Aide au camping</h2>
+            <h4>Farm & Camping Lazy, Cerovo, Slovaquie</h4>
+            <p>Soin des animaux, entretien du camping, préparation da repas pour les employés</p>
+          </li>
+          <li class="metier">
+            <h2>Travaux d'installation électrique</h2>
+            <h4>Filament34, Auberchicourt</h4>
+            <p>Installation de système électrique dans de grandes enseignes tel que Sephora, Maison du monde ou Cultura</p>
+          </li>
+          <li class="metier">
+            <h2>Technicien de laboratoire</h2>
+            <h4>Synlab, Lens</h4>
+            <p>Stage découverte du métier de biologiqte et des postes qui l'entoure</p>
+          </li>
+          <li class="metier">
+            <h2>Préparateur de commande</h2>
+            <h4>Renault, Lens</h4>
+            <p>Préparateur de commande en pièce automobile</p>
+          </li>
+        </ul>
+      </div>
     </section>
-    <section class="et-slide" id="tab-projets">
+    <section class="et-slide scroll-animate" id="tab-projets">
       <h1>Projets</h1>
-      <h2>something about angular</h2>
+      <div>
+        <ul>
+          <li class="projet">
+            <h2>ISEN - Jeux de puzzle dans un site WEB</h2>
+            <p>Projet de fin de première année de cours préparatoire aux cycle ingénieur. Création d'un site web avec l'intégration d'un jeu ainsi qu'une base de données</p>
+          </li>
+          <li class="projet">
+            <h2>ISEN - Application WEB/téléphone</h2>
+            <p>Projet de fin de deuxième année de cours préparatoire aux cycle ingénieur. Création d'une application et d'un site WEB répertoriant tous les bars de la ville de Lille avec leurs cartes et une description</p>
+          </li>
+          <li class="projet">
+            <h2>ISEN - Logiciel de gestion de restaurant</h2>
+            <p>Projet durant la première année du cycle ingénieur. Création d'un logiciel de gestion d'un restaurant en Java. Le logiciel gerait les commandes, le personnel et la gestion de tables...</p>
+          </li>
+          <li class="projet">
+            <h2>ISEN - Site WEB d'un Fablab</h2>
+            <p>Projet durant la première année du cycle ingénieur. Création d'un site WEB pour un Fablab. Le site permettait de réserver des machines, de voir les disponibilités et de voir les projets des autres utilisateurs</p>
+          </li>
+        </ul>
+      </div>
     </section>
-    <section class="et-slide" id="tab-liens">
-      <h1>Liens</h1>
-      <h2>something about other</h2>
-    </section>
-    <section class="et-slide" id="tab-contact">
-      <h1>Contact</h1>
-      <h2>something about angular</h2>
+    <section class="et-slide scroll-animate" id="tab-liens">
+      <h1 class="title-link">Liens</h1>
+      <a href="https://www.linkedin.com/in/audren-deleplanque-71185823a" target="_blank">
+        <img class="logo" src="./images/logo/linkedin.png" alt="logo-linkedin">
+      </a>
+      <a href="./document/CV%20DELEPLANQUE%20Audren.pdf" download>
+        <img class="logo" src="./images/logo/lecriture.png" alt="logo-cv">
+      </a>
     </section>
   </main>
-
-
 </body>
 </html>

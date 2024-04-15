@@ -95,6 +95,7 @@ a {
   margin-bottom: 50px;
   margin-top: -125px;
   zoom: 1.5;
+  box-shadow: 0 0 20px black;
 }
 
 /* Modification de la page compétence uniquement */
@@ -104,7 +105,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 150vh;
+  height: 100vh;
   position: relative;
   background: silver;
   text-align: center;
@@ -112,10 +113,21 @@ a {
   border: black 1px solid;
 }
 
+html{
+  scroll-behavior: smooth;
+  background: black;
+}
 
 
 
 
+/* Test de fondu */
 
+.scroll-animate {
+  opacity: 0;
+  transition: opacity 1s;
+}
 
-
+.fade-in {
+  opacity: 1;
+}

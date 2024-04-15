@@ -73,3 +73,18 @@ class StickyNavigation {
 }
 
 new StickyNavigation();
+
+document.addEventListener("DOMContentLoaded", function() {
+	let scrollAnimateElements = document.querySelectorAll('.scroll-animate');
+	let observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('fade-in');
+			}
+		});
+	}, { threshold: 0.1 }); // Ajustez cette valeur en fonction de vos besoins
+
+	scrollAnimateElements.forEach((el) => {
+		observer.observe(el);
+	});
+});
