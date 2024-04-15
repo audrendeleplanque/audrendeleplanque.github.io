@@ -1,3 +1,22 @@
-bleu foncé : #1B2431
-bleu clair : #1E488F
-bleu ciel : #016795
+Blanc hytara
+#f2f2f2
+
+couleur 1 thème clair
+#484848
+
+couleur 2 thème clair
+#262626
+
+Noir Hytara
+#0d0d0d
+
+rouge primaire
+#8c0303
+
+rouge secondaire
+#990303
+
+Rouge Contraste
+#ff0000
+
+

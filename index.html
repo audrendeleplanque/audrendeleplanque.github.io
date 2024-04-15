@@ -1,26 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="./style/index.css">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>DELEPLANQUE Audren</title>
+  <meta charset="UTF-8">
+  <title>CodePen - Sticky Slider Navigation (Responsive)</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./skill.css">
+
 </head>
 <body>
-<header>
+<!-- partial:index.partial.html -->
+<!-- Hero -->
+  <section class="et-hero-tabs">
     <h1>DELEPLANQUE Audren</h1>
-    <nav>
-        <ul>
-            <li><a href="http://audrendeleplanque.github.io">Accueil</a></li>
-            <li><a href="http://audrendeleplanque.github.io/cv">CV</a></li>
-            <li><a href="http://audrendeleplanque.github.io/projets">Projets</a></li>
-            <li><a href="http://audrendeleplanque.github.io/contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-<img id="photo-de-profil" src="images/test.jpg">
+    <h3>Site WEB personnel</h3>
+    <div class="et-hero-tabs-container">
+      <a class="et-hero-tab" href="#tab-presentation">Présentation</a>
+      <a class="et-hero-tab" href="#tab-competences">Compétences</a>
+      <a class="et-hero-tab" href="#tab-exp-pro">Expériences professionnelles</a>
+      <a class="et-hero-tab" href="#tab-projets">Projets</a>
+      <a class="et-hero-tab" href="#tab-liens">Liens</a>
+      <a class="et-hero-tab" href="#tab-contact">Contact</a>
+      <span class="et-hero-tab-slider"></span>
+    </div>
+  </section>
 
-<h2>Je voudrais que cette page soit la page de base</h2>
-<a href="http://audrendeleplanque.github.io/contact">Contact</a>
+  <!-- Main -->
+  <main class="et-main">
+    <section class="et-slide" id="tab-presentation">
+      <h1>Présentation</h1>
+      <h3>Je suis un étudiant en première année d'ingenieur à l'ISEN à Lille. Toujours passioné par l'informatique et la programmation, je voudrais faire un projet professionnel autour de ça.</h3>
+    </section>
+    <section class="et-slide" id="tab-competences">
+      <h1>Compétences</h1>
+      <h3>something about flexbox</h3>
+    </section>
+    <section class="et-slide" id="tab-exp-pro">
+      <h1>Expériences professionnelles</h1>S
+      <h3>something about react</h3>
+    </section>
+    <section class="et-slide" id="tab-projets">
+      <h1>Projets</h1>
+      <h3>something about angular</h3>
+    </section>
+    <section class="et-slide" id="tab-liens">
+      <h1>Liens</h1>
+      <h3>something about other</h3>
+    </section>
+    <section class="et-slide" id="tab-contact">
+      <h1>Contact</h1>
+      <h3>something about angular</h3>
+    </section>
+  </main>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
 
 </body>
 </html>
