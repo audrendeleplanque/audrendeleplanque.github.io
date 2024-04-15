@@ -1,7 +1,14 @@
 .logo{
     width: 100px;
     height: 100px;
-    margin: 0 auto;
     margin-top: 50px;
-    display: block;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-around; /* Cette ligne est optionnelle. Elle ajoute un espace égal entre les logos. */
 }

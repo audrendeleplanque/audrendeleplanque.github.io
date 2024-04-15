@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>DELEPLANQUE Audren</title>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
-  <script  src="./script.js"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/skill.css">
@@ -18,6 +16,7 @@
 <!-- partial:index.partial.html -->
 <!-- Hero -->
   <section class="et-hero-tabs scroll-animate">
+    <img class="fond-profil" src="./images/29314253-vecteur-seamless-noir-et-blanc-avec-des-éléments-d-informatique.jpg" alt="fond-ecran">
     <img id="photo" src="images/1713171498769.jpg" alt="photo-de-profil">
     <h1>DELEPLANQUE Audren</h1>
     <h2>20 ans</h2>
@@ -90,8 +89,8 @@
             </div>
         </div>
       <h2>Divers</h2>
-      <div id="liste-divers">
-        <ul>
+      <div>
+        <ul id="liste-divers">
           <li>Esprit d'analyse</li>
           <li>Gestion de projet</li>
           <li>Travail en équipe</li>
@@ -153,13 +152,18 @@
     </section>
     <section class="et-slide scroll-animate" id="tab-liens">
       <h1 class="title-link">Liens</h1>
-      <a href="https://www.linkedin.com/in/audren-deleplanque-71185823a" target="_blank">
-        <img class="logo" src="./images/logo/linkedin.png" alt="logo-linkedin">
-      </a>
-      <a href="./document/CV%20DELEPLANQUE%20Audren.pdf" download>
-        <img class="logo" src="./images/logo/lecriture.png" alt="logo-cv">
-      </a>
+      <div class="logo-container">
+        <a href="https://www.linkedin.com/in/audren-deleplanque-71185823a" target="_blank">
+          <img class="logo" src="./images/logo/linkedin.png" alt="logo-linkedin">
+        </a>
+        <a href="./document/CV%20DELEPLANQUE%20Audren.pdf" download>
+          <img class="logo" src="./images/logo/lecriture.png" alt="logo-cv">
+        </a>
+      </div>
     </section>
   </main>
 </body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+<script  src="./script.js"></script>
 </html>
