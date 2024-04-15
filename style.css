@@ -25,9 +25,9 @@ a {
   margin: 0;
   letter-spacing: 1rem;
 }
-.et-hero-tabs h3,
-.et-slide h3 {
-  font-size: 1rem;
+.et-hero-tabs h2,
+.et-slide h2 {
+  font-size: 25px;
   letter-spacing: 0.3rem;
   opacity: 0.6;
 }
@@ -78,14 +78,22 @@ a {
 .et-slide h1 {
     font-size: 3rem;
   }
-  .et-hero-tabs h3,
-.et-slide h3 {
-    font-size: 1rem;
+  .et-hero-tabs h2,
+.et-slide h2 {
+    font-size: 25px;
   }
 
   .et-hero-tab {
     font-size: 1rem;
   }
+}
+
+#photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 50px;
+  zoom: 1.5;
 }
 
 
