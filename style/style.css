@@ -43,6 +43,11 @@ a {
   background: #DCDCDC;
   z-index: 10;
 }
+
+.et-hero-tabs-container:hover > :not(:hover) {
+  opacity: 0.3;
+}
+
 .et-hero-tabs-container--top {
   position: fixed;
   top: 0;
@@ -96,6 +101,7 @@ a {
   margin-top: -125px;
   zoom: 1.5;
   box-shadow: 0 0 20px black;
+  z-index: 1;
 }
 
 /* Modification de la page compétence uniquement */
@@ -118,11 +124,6 @@ html{
   background: black;
 }
 
-
-
-
-/* Test de fondu */
-
 .scroll-animate {
   opacity: 0;
   transition: opacity 1s;
@@ -135,5 +136,5 @@ html{
 .fond-profil{
   width: 103.3%;
   margin-top: -70%;
-
+  z-index: 0;
 }

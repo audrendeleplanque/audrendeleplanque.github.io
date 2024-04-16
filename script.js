@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				entry.target.classList.add('fade-in');
 			}
 		});
-	}, { threshold: 0.1 }); // Ajustez cette valeur en fonction de vos besoins
+	}, { threshold: 0.5 }); // Ajustez cette valeur en fonction de vos besoins
 
 	scrollAnimateElements.forEach((el) => {
 		observer.observe(el);
