@@ -1,14 +1,18 @@
-.logo{
-    width: 100px;
-    height: 100px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
-    display: inline-block;
-    vertical-align: middle;
+.button-redirection{
+    margin: 75px 150px auto;
+    padding: 20px;
+    color: black;
+    background-color: white;
+    font-family: "Century Gothic", "Lato", sans-serif;
+    border: solid 1px white;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.logo-container {
-    display: flex;
-    justify-content: space-around; /* Cette ligne est optionnelle. Elle ajoute un espace égal entre les logos. */
+.button-redirection:hover{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.5s;
 }
