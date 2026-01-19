@@ -1,175 +1,386 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <title>DELEPLANQUE Audren</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audren DELEPLANQUE | Ingénieur Cybersécurité</title>
+    <!-- Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icônes Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
 
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="style/style.css">
-  <link rel="stylesheet" href="style/skill.css">
-  <link rel="stylesheet" href="style/exp-pro.css">
-  <link rel="stylesheet" href="style/projet.css">
-  <link rel="stylesheet" href="style/link.css">
+        .cyber-grid {
+            background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.1) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
 
+        .glass {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.2);
+        }
+    </style>
 </head>
-<body>
-<!-- partial:index.partial.html -->
-<!-- Hero -->
-  <section class="et-hero-tabs scroll-animate">
-    <img class="fond-profil" src="./images/29314253-vecteur-seamless-noir-et-blanc-avec-des-éléments-d-informatique.jpg" alt="fond-ecran">
-    <img id="photo" src="images/1713171498769.jpg" alt="photo-de-profil">
-    <h1>DELEPLANQUE Audren</h1>
-    <h2>21 years old</h2>
-    <h2>Lille</h2>
-    <h2></h2>
-    <div>
-      <a href="./document/CV_DELEPLANQUE.pdf" download="./document/CV_DELEPLANQUE.pdf" class="button-redirection"> Download résumé</a>
-      <a href="https://www.linkedin.com/in/audren-deleplanque-71185823a" class="button-redirection"> Linkedin</a>
-    </div>
+<body class="cyber-grid min-h-screen">
 
-    <div class="et-hero-tabs-container">
-      <a class="et-hero-tab" href="#tab-presentation">Presentation</a>
-      <a class="et-hero-tab" href="#tab-competences">Skills</a>
-      <a class="et-hero-tab" href="#tab-exp-pro">Professionals experiences</a>
-      <a class="et-hero-tab" href="#tab-projets">Projects</a>
-      <span class="et-hero-tab-slider"></span>
-    </div>
-  </section>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="font-bold tracking-tighter text-xl text-blue-500 font-mono">AD_SEC >_</span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#presentation" class="hover:text-blue-400 transition">Présentation</a>
+                <a href="#competences" class="hover:text-blue-400 transition">Compétences</a>
+                <a href="#experience" class="hover:text-blue-400 transition">Expérience</a>
+                <a href="#projets" class="hover:text-blue-400 transition">Projets</a>
+            </div>
+            <button class="md:hidden p-2" id="menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
 
-  <!-- Main -->
-  <main class="et-main">
-    <section class="et-slide scroll-animate" id="tab-presentation">
-      <h1>Presentation</h1>
-      <h2>Audren, a fourth year engineering student (equivalent to a Bac +4) specializing in new technologies with a strong focus on cybersecurity. </h2>
-      <h2>Passionate about the challenges of information security, I have developed skills in risk analysis, threat management, and data protection, which I have applied through academic and personal projects.</h2>
-      <h2>My goal is to begin my career with a reputable company in the cybersecurity field, where I can leverage my knowledge and grow both my technical and professional skills. Dynamic, curious, and solution-oriented, I am eager to contribute real value while continuing to learn from the best in the industry.</h2>
-    </section>
-    <section class="et-slide scroll-animate" id="tab-competences">
-      <h1>Skills</h1>
-      <br><br><br><br><br>
-      <h2>Languages</h2>
-      <div class="progress-bar">
-        <div class="progress" style="width: 100%;">
-          <span class="progress-percentage">French - Native speaker</span>
+    <!-- Section Hero -->
+    <section class="relative min-h-screen flex items-center justify-center pt-16 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-600/20 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-[150px]"></div>
         </div>
-      </div>
 
-      <div class="progress-bar">
-        <div class="progress" style="width: 65%;">
-          <span class="progress-percentage">English - 65% (B2)</span>
-        </div>
-      </div>
-      <br><br>
-      <h2>Programming</h2>
-      <div class="progress-bar">
-        <div class="progress" style="width: 80%;">
-          <span class="progress-percentage">Python - 80%</span>
-        </div>
-      </div>
-      <div class="progress-bar">
-        <div class="progress" style="width: 70%;">
-          <span class="progress-percentage">C++ - 70%</span>
-        </div>
-      </div>
-        <div class="progress-bar">
-            <div class="progress" style="width: 60%;">
-            <span class="progress-percentage">Java - 60%</span>
+        <div class="relative z-10 max-w-4xl text-center">
+            <div class="mb-6 inline-block">
+                <div class="relative w-32 h-32 mx-auto mb-6 p-1 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600">
+                    <img src="images/1713171498769.jpg" alt="Audren Deleplanque" class="w-full h-full rounded-full object-cover border-4 border-[#030712]" onerror="this.src='https://ui-avatars.com/api/?name=Audren+Deleplanque&background=0D8ABC&color=fff'">
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
+                Audren Deleplanque
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-400 font-mono mb-8">
+                Étudiant Ingénieur en Cybersécurité
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="document/CV_DELEPLANQUE.pdf" class="px-8 py-3 bg-blue-600 hover:bg-blue-500 rounded-full font-semibold transition flex items-center gap-2">
+                    <i data-lucide="download" class="w-4 h-4"></i> Télécharger CV
+                </a>
+                <a href="https://www.linkedin.com/in/audren-deleplanque-71185823a" target="_blank" class="px-8 py-3 glass hover:bg-white/10 rounded-full font-semibold transition flex items-center gap-2">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                </a>
             </div>
         </div>
-        <div class="progress-bar">
-            <div class="progress" style="width: 60%;">
-            <span class="progress-percentage">HTML/CSS - 60%</span>
-            </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <i data-lucide="chevron-down"></i>
         </div>
-        <div class="progress-bar">
-            <div class="progress" style="width: 60%;">
-            <span class="progress-percentage">JavaScript - 60%</span>
-            </div>
-        </div>
-      <br><br>
-      <h2>Computer tools</h2>
-        <div class="progress-bar">
-            <div class="progress" style="width: 80%;">
-            <span class="progress-percentage">Pack Office - 80%</span>
-            </div>
-        </div>
-        <div class="progress-bar">
-            <div class="progress" style="width: 70%;">
-            <span class="progress-percentage">JetBrain - 70%</span>
-            </div>
-        </div>
-      <br><br>
-      <h2>Other</h2>
-      <div>
-        <ul id="liste-divers">
-          <li>Analytical skills</li>
-          <li>Project management</li>
-          <li>Teamwork</li>
-          <li>Stand-alone</li>
-          <li>Curious</li>
-          <li>Organized</li>
-        </ul>
-      </div>
     </section>
-    <section class="et-slide scroll-animate" id="tab-exp-pro">
-      <h1 class="title-exp">Professionals experiences</h1>
-      <br><br><br><br><br>
-      <div>
-        <ul>
-          <li class="metier">
-            <h2>Camping help</h2>
-            <h4>Farm & Camping Lazy, Cerovo, Slovakia</h4>
-            <p>Animal care, campsite maintenance, meal preparation for employees</p>
-          </li>
-          <li class="metier">
-            <h2>Electrical installation</h2>
-            <h4>Filament34, Auberchicourt, France</h4>
-            <p>Installation of electrical systems in major stores such as Sephora, Maison du monde and Cultura</p>
-          </li>
-          <li class="metier">
-            <h2>Laboratory technician</h2>
-            <h4>Synlab, Lens, France</h4>
-            <p>Introduction to the job of biologist and the jobs involved</p>
-          </li>
-          <li class="metier">
-            <h2>Order picker</h2>
-            <h4>Renault, Lens, France</h4>
-            <p>Automotive parts order picker</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section class="et-slide scroll-animate" id="tab-projets">
-      <h1>Projects</h1>
-      <br><br><br><br><br>
-      <div>
-        <ul>
-          <li class="projet">
-            <h2>ISEN - Puzzle games in a website</h2>
-            <p>Project for the end of the first year of a preparatory course for the engineering cycle. Creation of a website with the integration of a game and a database.</p>
-          </li>
-          <li class="projet">
-            <h2>ISEN - WEB/telephone application</h2>
-            <p>Project for the end of the second year of a preparatory course for the engineering cycle. Creation of an application and a website listing all the bars in the city of Lille, with their maps and descriptions.</p>
-          </li>
-          <li class="projet">
-            <h2>ISEN - Restaurant management software</h2>
-            <p>Project during the first year of the engineering cycle. Creation of a restaurant management software in Java. The software would manage orders, staff and tables...</p>
-          </li>
-          <li class="projet">
-            <h2>ISEN - Fablab website</h2>
-            <p>Project during the first year of the engineering cycle. Creation of a Website for a Fablab. The site allowed users to reserve machines, check availability and view other users' projects.</p>
-          </li>
-          <li class="projet">
-            <h2>Personal - Cybersecurity training site</h2>
-            <p>In my spare time, I train on sites like RootMe, TryHackMe and HackTheBox to learn as much as I can about cybersecurity. </p>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
+
+    <!-- Contenu Principal -->
+    <main class="max-w-5xl mx-auto px-6 space-y-32 pb-32">
+        
+        <!-- Présentation -->
+        <section id="presentation" class="section-fade">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="flex-1">
+                    <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                        <i data-lucide="user" class="text-blue-500"></i> À propos
+                    </h2>
+                    <div class="space-y-4 text-gray-400 leading-relaxed text-lg">
+                        <p>
+                            Actuellement en 5ème année d'ingénierie à l'ISEN Lille, je me spécialise dans la 
+                            <span class="text-white font-semibold">Cybersécurité</span>. 
+                            Passionné par les défis de la sécurité informatique, j'ai développé une solide culture technique 
+                            mêlant analyse de risques et gestion des menaces.
+                        </p>
+                        <p>
+                            Curieux et orienté solutions, je cherche à mettre mon expertise au service de projets ambitieux 
+                            tout en continuant à apprendre auprès d'experts du domaine.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 glass p-6 rounded-2xl border-blue-500/20">
+                    <ul class="space-y-4 text-sm font-mono">
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-blue-400">Âge :</span> <span id="user-age">-- ans</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-blue-400">Localisation :</span> <span>Lille, France</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-blue-400">Statut :</span> <span>Bac +5</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-blue-400">Langues :</span> <span>FR (Natif), EN (B2)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compétences -->
+        <section id="competences" class="section-fade">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+                <i data-lucide="code" class="text-blue-500"></i> Stack Technique
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Programmation -->
+                <div class="glass p-8 rounded-2xl group hover:border-blue-500/50 transition">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="terminal" class="text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Programmation</h3>
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-1 rounded text-xs">Python</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">C++</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">Java</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">JavaScript</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersécurité -->
+                <div class="glass p-8 rounded-2xl group hover:border-blue-500/50 transition">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Cybersécurité</h3>
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-1 rounded text-xs">Linux (Ubuntu/Kali)</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">TCP/IP</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">DNS</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">VPN</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">CTF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outils -->
+                <div class="glass p-8 rounded-2xl group hover:border-blue-500/50 transition">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="wrench" class="text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Outils & Soft Skills</h3>
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-1 rounded text-xs">JetBrains</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">Zabbix</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">Office 365</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">Gestion de projet</span>
+                            <span class="skill-tag px-3 py-1 rounded text-xs">Esprit d'équipe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expérience -->
+        <section id="experience" class="section-fade">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+                <i data-lucide="briefcase" class="text-blue-500"></i> Expériences
+            </h2>
+            <div class="space-y-8 relative before:absolute before:left-[17px] before:top-2 before:bottom-2 before:w-[2px] before:bg-white/5">
+                
+                <!-- Stage 2025 -->
+                <div class="relative pl-12">
+                    <div class="absolute left-0 top-2 w-[36px] h-[36px] bg-blue-600 rounded-full flex items-center justify-center border-4 border-[#030712]">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                    </div>
+                    <div class="glass p-6 rounded-2xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold">Stage Cybersécurité</h3>
+                            <span class="text-blue-400 font-mono text-sm">Mai - Août 2025</span>
+                        </div>
+                        <p class="text-white font-medium mb-2">Ecofrost — Péruwelz, Belgique</p>
+                        <p class="text-gray-400 text-sm">Surveillance des serveurs avec Zabbix, mise en place d'alertes et sécurisation de l'infrastructure IT.</p>
+                    </div>
+                </div>
+
+                <!-- Électricien -->
+                <div class="relative pl-12">
+                    <div class="absolute left-0 top-2 w-[36px] h-[36px] bg-white/10 rounded-full flex items-center justify-center border-4 border-[#030712]">
+                        <i data-lucide="zap" class="w-4 h-4 text-gray-400"></i>
+                    </div>
+                    <div class="glass p-6 rounded-2xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold">Électricien</h3>
+                            <span class="text-gray-500 font-mono text-sm">Juillet - Août 2024</span>
+                        </div>
+                        <p class="text-white font-medium mb-2">Filamant34 — Auberchicourt, France</p>
+                        <p class="text-gray-400 text-sm">Installation de systèmes électriques pour de grandes enseignes (Sephora, Maison du Monde).</p>
+                    </div>
+                </div>
+
+                <!-- Camping -->
+                <div class="relative pl-12">
+                    <div class="absolute left-0 top-2 w-[36px] h-[36px] bg-white/10 rounded-full flex items-center justify-center border-4 border-[#030712]">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-gray-400"></i>
+                    </div>
+                    <div class="glass p-6 rounded-2xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold">Assistant Camping</h3>
+                            <span class="text-gray-500 font-mono text-sm">Juin - Août 2023</span>
+                        </div>
+                        <p class="text-white font-medium mb-2">Farm & Camping Lazy — Cerovo, Slovaquie</p>
+                        <p class="text-gray-400 text-sm">Entretien, soin des animaux et préparation des repas pour les équipes.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projets -->
+        <section id="projets" class="section-fade">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+                <i data-lucide="layout" class="text-blue-500"></i> Projets Sélectionnés
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <i data-lucide="layers" class="text-blue-500"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400">ISEN LILLE</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-blue-400 transition">Logiciel de Gestion de Restaurant</h3>
+                    <p class="text-gray-400 text-sm mb-4">Création d'une application Java complète pour la gestion des commandes, du personnel et des tables.</p>
+                    <div class="flex gap-2">
+                        <span class="px-2 py-1 bg-white/5 text-[10px] rounded">JAVA</span>
+                        <span class="px-2 py-1 bg-white/5 text-[10px] rounded">POO</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <i data-lucide="globe" class="text-blue-500"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400">ISEN LILLE</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-blue-400 transition">Site Web Fablab</h3>
+                    <p class="text-gray-400 text-sm mb-4">Plateforme de réservation de machines et de consultation de projets communautaires.</p>
+                    <div class="flex gap-2">
+                        <span class="px-2 py-1 bg-white/5 text-[10px] rounded">HTML/CSS</span>
+                        <span class="px-2 py-1 bg-white/5 text-[10px] rounded">JS</span>
+                        <span class="px-2 py-1 bg-white/5 text-[10px] rounded">SQL</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <i data-lucide="lock" class="text-blue-500"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400">PERSONNEL</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-blue-400 transition">Entraînement CTF</h3>
+                    <p class="text-gray-400 text-sm mb-4">Formation continue sur RootMe, TryHackMe et HackTheBox pour approfondir mes compétences cyber.</p>
+                    <div class="flex gap-2">
+                        <span class="px-2 py-1 bg-white/5 text-[10px] rounded">CYBER</span>
+                        <span class="px-2 py-1 bg-white/5 text-[10px] rounded">HACKING</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <i data-lucide="smartphone" class="text-blue-500"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400">ISEN LILLE</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-blue-400 transition">App des Bars de Lille</h3>
+                    <p class="text-gray-400 text-sm mb-4">Application web répertoriant les bars de Lille avec cartes et descriptions interactives.</p>
+                    <div class="flex gap-2">
+                        <span class="px-2 py-1 bg-white/5 text-[10px] rounded">WEB</span>
+                        <span class="px-2 py-1 bg-white/5 text-[10px] rounded">API</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="glass py-12 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-gray-500 text-sm font-mono">
+                &copy; <span id="current-year"></span> DELEPLANQUE Audren.
+            </p>
+            <div class="flex gap-6">
+                <a href="mailto:audrendele@gmail.com" class="text-gray-400 hover:text-white transition">
+                    <i data-lucide="mail"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/audren-deleplanque-71185823a" class="text-gray-400 hover:text-white transition">
+                    <i data-lucide="linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialisation des icônes Lucide
+        lucide.createIcons();
+
+        // 1. LOGIQUE DE CALCUL DE L'ÂGE
+        function updateAge() {
+            const birthDate = new Date('2003-07-15');
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            const ageElement = document.getElementById('user-age');
+            if (ageElement) {
+                ageElement.innerText = age + ' ans';
+            }
+        }
+
+        // Définir l'année actuelle dans le footer
+        document.getElementById('current-year').innerText = new Date().getFullYear();
+
+        // Animations d'apparition au scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-fade').forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Appels initiaux
+        window.onload = () => {
+            updateAge();
+        };
+    </script>
 </body>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
-<script  src="./script.js"></script>
 </html>
