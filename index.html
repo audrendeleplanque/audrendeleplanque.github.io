@@ -1,444 +1,185 @@
-<!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audren DELEPLANQUE | Expert Cyber</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="alternate icon" type="image/png" href="images/logo/lecriture.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap');
-
-        :root {
-            --neon-blue: #00f2ff;
-            --neon-purple: #7000ff;
-            --bg-dark: #050508;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-dark);
-            color: #e2e8f0;
-            overflow-x: hidden;
-        }
-
-        /* Effet de balayage laser */
-        .scanline {
-            width: 100%;
-            height: 100px;
-            z-index: 99;
-            background: linear-gradient(0deg, rgba(0, 242, 255, 0) 0%, rgba(0, 242, 255, 0.05) 50%, rgba(0, 242, 255, 0) 100%);
-            opacity: 0.1;
-            position: absolute;
-            bottom: 100%;
-            animation: scan 8s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes scan {
-            0% { bottom: 100%; }
-            100% { bottom: -100px; }
-        }
-
-        .cyber-card {
-            background: rgba(15, 15, 25, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cyber-card:hover {
-            border-color: var(--neon-blue);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(0, 242, 255, 0.2);
-        }
-
-        .cyber-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
-            transform: translateX(-100%);
-            transition: 0.5s;
-        }
-
-        .cyber-card:hover::before {
-            transform: translateX(100%);
-        }
-
-        /* Barre de progression personnalisée */
-        .progress-bar-fill {
-            transition: width 1.5s ease-in-out;
-            background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
-            box-shadow: 0 0 15px var(--neon-blue);
-        }
-
-        .section-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .section-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio d'Audren Deleplanque — Ingénieur informatique spécialisé DevSecOps, DevOps et cybersécurité.">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Audren Deleplanque — Ingénieur informatique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="scanline"></div>
-
-    <!-- Éléments de lueur de fond -->
-    <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
-        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-900/20 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-900/10 rounded-full blur-[120px]"></div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-[100] border-b border-white/5 bg-black/50 backdrop-blur-xl">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2 group cursor-pointer">
-                <div class="w-10 h-10 bg-blue-600 rounded flex items-center justify-center group-hover:rotate-90 transition-transform">
-                    <i data-lucide="shield" class="w-6 h-6 text-white"></i>
-                </div>
-                <span class="font-bold text-xl tracking-tighter font-mono">AD_ROOT<span class="text-blue-500 animate-pulse">_</span></span>
-            </div>
-            <div class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
-                <a href="#about" class="hover:text-blue-400 transition">Identité</a>
-                <a href="#skills" class="hover:text-blue-400 transition">Arsenal</a>
-                <a href="#experience" class="hover:text-blue-400 transition">Logs</a>
-                <a href="#projects" class="hover:text-blue-400 transition">Déploiements</a>
-                <a href="document/CV_DELEPLANQUE.pdf" class="px-4 py-2 border border-blue-500/30 rounded hover:bg-blue-500/10 text-blue-400 transition">CV</a>
-            </div>
-        </div>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Retour en haut">AD<span>.</span></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#profil">Profil</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Expérience</a>
+      <a href="#projets">Projets</a>
+      <a class="nav-cta" href="CV_Audren_DELEPLANQUE.pdf" target="_blank" rel="noreferrer noopener">CV ↗</a>
     </nav>
+    <button class="menu-button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
 
-    <!-- Section Hero -->
-    <header class="relative min-h-screen flex items-center justify-center pt-20">
-        <div class="max-w-6xl mx-auto px-6 text-center z-10">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold mb-8 animate-fade-in">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                SYSTÈME OPÉRATIONNEL : BAC +5 CYBER
-            </div>
-            
-            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/40">
-                AUDREN <br> DELEPLANQUE
-            </h1>
-            
-            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-                Architecte de solutions de sécurité, spécialisé dans l'analyse de menaces et la protection des infrastructures critiques.
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-4">
-                <button onclick="document.getElementById('about').scrollIntoView()" class="px-10 py-4 bg-white text-black font-bold rounded hover:bg-blue-500 hover:text-white transition-all duration-300">
-                    ACCÉDER AU VAULT
-                </button>
-                <a href="https://www.linkedin.com/in/audren-deleplanque-71185823a" target="_blank" class="px-10 py-4 bg-white/5 border border-white/10 rounded font-bold hover:bg-white/10 transition-all flex items-center gap-2">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i> RÉSEAU
-                </a>
-            </div>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow reveal"><span class="status-dot"></span> Disponible pour un CDI</p>
+        <h1 class="reveal delay-1">Construire.<br><em>Sécuriser.</em><br>Automatiser.</h1>
+        <div class="hero-bottom reveal delay-2">
+          <p class="hero-copy">Audren Deleplanque — ingénieur informatique, orienté <strong>DevSecOps, DevOps et cybersécurité</strong>. J'aime transformer des infrastructures complexes en systèmes automatisés, observables et fiables.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#projets">Voir mes projets <span>↓</span></a>
+            <a class="button button-line" href="mailto:audrendele@gmail.com">Me contacter <span>↗</span></a>
+          </div>
         </div>
+      </div>
+      <div class="hero-meta mono">LILLE · RENNES · PARIS <span>2026</span></div>
+    </section>
 
-        <div id="glow" class="hidden md:block absolute w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[80px] pointer-events-none transition-transform duration-75"></div>
-    </header>
-
-    <!-- Contenu Principal -->
-    <main class="max-w-7xl mx-auto px-6 space-y-40 pb-40">
-
-        <!-- Section Identité -->
-        <section id="about" class="section-reveal grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-bold mb-8 flex items-center gap-4">
-                    <span class="text-blue-500 font-mono text-xl">01.</span> IDENTITY_LOG
-                </h2>
-                <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
-                    <p>
-                        Basé à <span class="text-white font-semibold">Lille</span>, je forge mon expertise au sein de l'ISEN. 
-                        Mon approche de la cybersécurité est proactive : comprendre l'attaque pour mieux structurer la défense.
-                    </p>
-                    <p>
-                        Spécialisé dans la sécurisation des infrastructures et l'automatisation de la maintenance, j'allie rigueur académique et pratique intensive.
-                    </p>
-                    <div class="pt-6 grid grid-cols-2 gap-4">
-                        <div class="cyber-card p-4 rounded-lg border-l-4 border-l-blue-500">
-                            <p class="text-xs text-blue-500 font-bold mb-1 uppercase tracking-widest">Uptime</p>
-                            <p id="live-age" class="text-2xl font-bold text-white font-mono">-- ANS</p>
-                        </div>
-                        <div class="cyber-card p-4 rounded-lg border-l-4 border-l-purple-500">
-                            <p class="text-xs text-purple-500 font-bold mb-1 uppercase tracking-widest">Spécialisation</p>
-                            <p class="text-2xl font-bold text-white font-mono">CYBERSEC</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="relative group">
-                <div class="absolute inset-0 bg-blue-500/20 blur-[50px] group-hover:bg-blue-500/40 transition duration-500"></div>
-                <div class="cyber-card aspect-square rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                    <img src="images/1713171498769.jpg" alt="Audren" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Audren+Deleplanque&size=512&background=020617&color=fff'">
-                </div>
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-blue-500 pointer-events-none"></div>
-                <div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-blue-500 pointer-events-none"></div>
-            </div>
-        </section>
-
-        <!-- Section Arsenal (Compétences) -->
-        <section id="skills" class="section-reveal">
-            <h2 class="text-4xl font-bold mb-16 text-center">
-                <span class="text-blue-500 font-mono text-xl">02.</span> TECH_ARSENAL
-            </h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Programmation -->
-                <div class="space-y-6">
-                    <div class="flex items-center gap-3 mb-8">
-                        <i data-lucide="terminal" class="text-blue-500 w-6 h-6"></i>
-                        <h3 class="text-xl font-bold uppercase tracking-widest">Langages</h3>
-                    </div>
-                    <div class="space-y-8">
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2 text-sm font-mono"><span>PYTHON</span><span>85%</span></div>
-                            <div class="h-1 bg-white/5 rounded-full overflow-hidden">
-                                <div class="progress-bar-fill h-full" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2 text-sm font-mono"><span>NODEJS / JS</span><span>80%</span></div>
-                            <div class="h-1 bg-white/5 rounded-full overflow-hidden">
-                                <div class="progress-bar-fill h-full" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2 text-sm font-mono"><span>REACT</span><span>70%</span></div>
-                            <div class="h-1 bg-white/5 rounded-full overflow-hidden">
-                                <div class="progress-bar-fill h-full" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2 text-sm font-mono"><span>C++ / C</span><span>60%</span></div>
-                            <div class="h-1 bg-white/5 rounded-full overflow-hidden">
-                                <div class="progress-bar-fill h-full" style="width: 60%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sécurité & Infrastructure -->
-                <div class="space-y-6">
-                    <div class="flex items-center gap-3 mb-8">
-                        <i data-lucide="shield-check" class="text-blue-500 w-6 h-6"></i>
-                        <h3 class="text-xl font-bold uppercase tracking-widest">Security / Infra</h3>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="cyber-card p-4 rounded flex items-center gap-4">
-                            <div class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_#3b82f6]"></div>
-                            <span class="font-mono text-sm">PROXMOX (Virtualisation)</span>
-                        </div>
-                        <div class="cyber-card p-4 rounded flex items-center gap-4">
-                            <div class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_#3b82f6]"></div>
-                            <span class="font-mono text-sm">Linux (Kali / Ubuntu / RHEL / Debian)</span>
-                        </div>
-                        <div class="cyber-card p-4 rounded flex items-center gap-4">
-                            <div class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_#3b82f6]"></div>
-                            <span class="font-mono text-sm">Zabbix Monitoring</span>
-                        </div>
-                        <div class="cyber-card p-4 rounded flex items-center gap-4">
-                            <div class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_#3b82f6]"></div>
-                            <span class="font-mono text-sm">Protocoles TCP/IP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Outils d'Ingénierie -->
-                <div class="space-y-6">
-                    <div class="flex items-center gap-3 mb-8">
-                        <i data-lucide="cpu" class="text-blue-500 w-6 h-6"></i>
-                        <h3 class="text-xl font-bold uppercase tracking-widest">Outils</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-2 border border-white/10 rounded-full text-xs font-bold hover:bg-white/10 transition">VS CODE</span>
-                        <span class="px-4 py-2 border border-white/10 rounded-full text-xs font-bold hover:bg-white/10 transition">JETBRAINS</span>
-                        <span class="px-4 py-2 border border-white/10 rounded-full text-xs font-bold hover:bg-white/10 transition">DOCKER</span>
-                        <span class="px-4 py-2 border border-white/10 rounded-full text-xs font-bold hover:bg-white/10 transition">GIT</span>
-                        <span class="px-4 py-2 border border-white/10 rounded-full text-xs font-bold hover:bg-white/10 transition">WIRESHARK</span>
-                        <span class="px-4 py-2 border border-white/10 rounded-full text-xs font-bold hover:bg-white/10 transition">JENKINS</span>
-                        <span class="px-4 py-2 border border-white/10 rounded-full text-xs font-bold hover:bg-white/10 transition">NETBOX</span>
-                        <span class="px-4 py-2 border border-white/10 rounded-full text-xs font-bold hover:bg-white/10 transition">FIREWALL</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Expériences (Logs) -->
-        <section id="experience" class="section-reveal">
-            <h2 class="text-4xl font-bold mb-16">
-                <span class="text-blue-500 font-mono text-xl">03.</span> ACTIVITY_LOGS
-            </h2>
-            <div class="space-y-12">
-                <div class="group relative pl-10 border-l border-white/10 pb-12 last:pb-0">
-                    <div class="absolute left-[-9px] top-0 w-4 h-4 bg-blue-500 rounded-full ring-8 ring-blue-500/10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-                        <div>
-                            <span class="text-xs font-bold text-blue-500 font-mono">2026 // STAGE</span>
-                            <h3 class="text-2xl font-bold mt-1">INGENIEUR DEVSECOPS</h3>
-                            <p class="text-gray-500 font-mono text-sm mt-1">Thales — Lambersart, France</p>
-                        </div>
-                        <div class="md:text-right">
-                            <span class="text-xs bg-white/5 px-3 py-1 rounded text-gray-400">ACTIF</span>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-gray-400 max-w-3xl">
-                        Conception d’une application conteneurisée (Docker) avec pipeline CI/CD en environnement cloud privé (Jenkins / Bitbucket) permettant le déploiement automatisé et la mise à jour continue, avec intégration de tests avant mise en production. 
-                        Développement d’un plugin NetBox Docker pour automatiser la génération de dossiers d’homologation et participation au pilotage du projet
-                    </p>
-                </div>
-
-                <div class="group relative pl-10 border-l border-white/10 pb-12 last:pb-0">
-                    <div class="absolute left-[-9px] top-0 w-4 h-4 bg-white/10 rounded-full group-hover:bg-blue-500 transition-colors"></div>
-                    <div>
-                        <span class="text-xs font-bold text-gray-500 font-mono">2025 // STAGE</span>
-                        <h3 class="text-2xl font-bold mt-1">ANALYSTE CYBERSÉCURITÉ</h3>
-                        <p class="text-gray-500 font-mono text-sm mt-1">Ecofrost — Péruwelz, Belgique</p>
-                    </div>
-                    <p class="mt-4 text-gray-400 max-w-3xl">
-                        Mise en place d'une infrastructure de monitoring avec Zabbix. Création de triggers de sécurité et automatisation de la maintenance pour l'infrastructure IT.
-                    </p>
-                </div>
-
-                <div class="group relative pl-10 border-l border-white/10 pb-12 last:pb-0">
-                    <div class="absolute left-[-9px] top-0 w-4 h-4 bg-white/10 rounded-full group-hover:bg-blue-500 transition-colors"></div>
-                    <div>
-                        <span class="text-xs font-bold text-gray-500 font-mono">2024 // MAINTENANCE</span>
-                        <h3 class="text-2xl font-bold mt-1">ÉLECTRICIEN RÉSEAUX</h3>
-                        <p class="text-gray-500 font-mono text-sm mt-1">Filamant34 — Auberchicourt, France</p>
-                    </div>
-                    <p class="mt-4 text-gray-400 max-w-3xl">
-                        Installation de systèmes électriques complexes pour des enseignes critiques (Sephora, Maison du Monde).
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Projets (Déploiements) -->
-        <section id="projects" class="section-reveal">
-            <h2 class="text-4xl font-bold mb-16 text-right">
-                <span class="text-blue-500 font-mono text-xl">04.</span> DEPLOYED_PROJECTS
-            </h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <!-- Projet 1: File Transfer -->
-                <div class="cyber-card p-1 rounded-2xl">
-                    <div class="bg-black/40 rounded-[14px] p-8 h-full flex flex-col">
-                        <div class="flex justify-between items-start mb-12">
-                            <div class="w-12 h-12 bg-blue-500/10 rounded flex items-center justify-center">
-                                <i data-lucide="share-2" class="text-blue-500"></i>
-                            </div>
-                            <div class="flex gap-2">
-                                <span class="text-[10px] bg-white/5 px-2 py-1 rounded">NODEJS</span>
-                                <span class="text-[10px] bg-white/5 px-2 py-1 rounded">DISCORD_BOT</span>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 uppercase">Node_Vault_Transfer</h3>
-                        <p class="text-gray-400 text-sm mb-8 flex-1">
-                            Système de transfert de fichiers sécurisé. L'utilisateur entre un code unique pour débloquer le téléchargement d'archives ZIP volumineuses générées par un robot Discord.
-                        </p>
-                        <div class="flex items-center gap-4 text-xs font-bold text-blue-500">
-                            <span class="flex items-center gap-1"><i data-lucide="shield" class="w-3 h-3"></i> PRIVATE_DEPLOY</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 2: Lab Database -->
-                <div class="cyber-card p-1 rounded-2xl">
-                    <div class="bg-black/40 rounded-[14px] p-8 h-full flex flex-col">
-                        <div class="flex justify-between items-start mb-12">
-                            <div class="w-12 h-12 bg-blue-500/10 rounded flex items-center justify-center">
-                                <i data-lucide="database" class="text-blue-500"></i>
-                            </div>
-                            <div class="flex gap-2">
-                                <span class="text-[10px] bg-white/5 px-2 py-1 rounded">REACT</span>
-                                <span class="text-[10px] bg-white/5 px-2 py-1 rounded">MANAGEMENT</span>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 uppercase">Junia_Equipementheque</h3>
-                        <p class="text-gray-400 text-sm mb-8 flex-1">
-                            Application web de gestion de parc machines. Suivi des maintenances, de la consommation d'eau et d'électricité pour optimiser les ressources de laboratoire.
-                        </p>
-                        <div class="flex items-center gap-4 text-xs font-bold text-blue-500">
-                            <span class="flex items-center gap-1"><i data-lucide="graduation-cap" class="w-3 h-3"></i> ISEN_PROJECT</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Pied de page -->
-    <footer class="border-t border-white/5 bg-black/80 py-20 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
-            <div>
-                <h2 class="text-3xl font-extrabold mb-4">PRÊT À INSTALLER ?</h2>
-                <p class="text-gray-500 font-mono text-sm">Disponible pour contrat à durée indéterminée à partir de septembre 2026.</p>
-            </div>
-            <div class="flex flex-col gap-4">
-                <a href="mailto:audrendele@gmail.com" class="text-2xl font-bold text-white hover:text-blue-500 transition underline underline-offset-8">
-                    audrendele@gmail.com
-                </a>
-                <div class="flex justify-center md:justify-start gap-6">
-                    <a href="https://www.linkedin.com/in/audren-deleplanque-71185823a" class="text-gray-400 hover:text-white transition"><i data-lucide="linkedin"></i></a>
-                </div>
-            </div>
+    <section id="profil" class="section section-profile">
+      <div class="container two-col">
+        <div>
+          <p class="section-index mono">01 / PROFIL</p>
+          <h2>Un profil d'ingénieur<br><span>entre code & infrastructure.</span></h2>
         </div>
-        <div class="mt-20 text-center text-[10px] text-gray-600 font-mono tracking-widest uppercase">
-            &copy; <span id="year"></span> DELEPLANQUE_AUDREN // VERSION_6.0
+        <div class="profile-copy">
+          <p>Diplômé de l'<strong>ISEN Lille</strong>, j'ai construit mon parcours autour du développement logiciel, des infrastructures et de la cybersécurité.</p>
+          <p>Mes expériences m'ont amené à travailler sur l'automatisation des déploiements, les environnements virtualisés, le monitoring et les outils qui font le lien entre développement et exploitation.</p>
+          <p>Je recherche aujourd'hui une première expérience en CDI où je pourrai continuer à progresser sur des sujets <strong>DevSecOps, DevOps ou cybersécurité</strong>, avec une forte composante technique.</p>
+          <div class="facts">
+            <div><span class="mono">FORMATION</span><strong>Diplôme d'ingénieur<br>informatique — ISEN Lille</strong></div>
+            <div><span class="mono">RECHERCHE</span><strong>CDI<br>DevSecOps · DevOps · Cyber</strong></div>
+            <div><span class="mono">MOBILITÉ</span><strong>Lille · Rennes<br>Paris</strong></div>
+            <div><span class="mono">CONTACT</span><strong><a href="mailto:audrendele@gmail.com">audrendele@gmail.com</a></strong></div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script>
-        // Initialisation Lucide
-        lucide.createIcons();
+    <section id="expertise" class="section section-dark">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-index mono">02 / EXPERTISE</p>
+          <h2>Mon terrain de jeu.</h2>
+          <p>Pas une liste de mots-clés : les technologies que j'ai réellement rencontrées et utilisées.</p>
+        </div>
+        <div class="skill-grid">
+          <article class="skill-card">
+            <span class="skill-number mono">01</span>
+            <h3>DevSecOps<br>& DevOps</h3>
+            <p>CI/CD, automatisation, conteneurs et déploiements reproductibles.</p>
+            <div class="tags"><span>Jenkins</span><span>Docker</span><span>Git</span><span>Bitbucket</span><span>Terraform</span><span>Ansible</span></div>
+          </article>
+          <article class="skill-card">
+            <span class="skill-number mono">02</span>
+            <h3>Infrastructure<br>& Virtualisation</h3>
+            <p>Environnements Linux, virtualisation, cloud privé et infrastructure as code.</p>
+            <div class="tags"><span>VMware</span><span>Cloud Director</span><span>Linux</span><span>IaC</span><span>NetBox</span></div>
+          </article>
+          <article class="skill-card">
+            <span class="skill-number mono">03</span>
+            <h3>Monitoring<br>& Observabilité</h3>
+            <p>Supervision, dashboards, alerting et analyse de problèmes d'infrastructure.</p>
+            <div class="tags"><span>Zabbix</span><span>Grafana</span><span>Docker</span><span>Monitoring</span><span>Réseaux</span></div>
+          </article>
+          <article class="skill-card">
+            <span class="skill-number mono">04</span>
+            <h3>Développement<br>& Automatisation</h3>
+            <p>Développement d'outils et d'APIs pour automatiser des tâches techniques.</p>
+            <div class="tags"><span>Python</span><span>Django</span><span>JavaScript</span><span>REST API</span><span>Git</span></div>
+          </article>
+        </div>
+        <div class="skill-strip">
+          <span class="mono">OUTILS</span>
+          <p>Python · Docker · Jenkins · Git · Linux · Zabbix · Grafana · NetBox · Terraform · Ansible · VMware · JavaScript · Django</p>
+        </div>
+      </div>
+    </section>
 
-        // Calcul dynamique de l'âge
-        function calculateAge() {
-            const birth = new Date('2003-07-15');
-            const now = new Date();
-            let age = now.getFullYear() - birth.getFullYear();
-            const m = now.getMonth() - birth.getMonth();
-            if (m < 0 || (m === 0 && now.getDate() < birth.getDate())) {
-                age--;
-            }
-            document.getElementById('live-age').innerText = age + ' ANS';
-        }
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div><p class="section-index mono">03 / EXPÉRIENCE</p><h2>Ce que j'ai<br>construit en entreprise.</h2></div>
+          <p>Des environnements industriels et IT aux plateformes d'infrastructure, avec un fil conducteur : automatiser et fiabiliser.</p>
+        </div>
+        <div class="timeline">
+          <article class="experience">
+            <div class="experience-date mono">2026</div>
+            <div class="experience-main">
+              <div class="experience-top"><div><h3>Ingénieur DevSecOps</h3><p>Thales <span>·</span> Lambersart</p></div><span class="type">STAGE</span></div>
+              <p>Automatisation d'infrastructures IaaS dans un environnement de cloud privé : développement Python, conteneurisation, automatisation avec Terraform / Ansible, intégration Jenkins et travail autour de VMware Cloud Director et NSX.</p>
+              <div class="experience-tags"><span>Python</span><span>Jenkins</span><span>Docker</span><span>Terraform</span><span>Ansible</span><span>VMware</span></div>
+            </div>
+          </article>
+          <article class="experience">
+            <div class="experience-date mono">2025</div>
+            <div class="experience-main">
+              <div class="experience-top"><div><h3>IT / Monitoring</h3><p>Ecofrost <span>·</span> Péruwelz, Belgique</p></div><span class="type">STAGE</span></div>
+              <p>Mise en place et exploitation de la supervision de l'infrastructure IT avec Zabbix et Grafana. Travail sur Docker, les alertes, les dashboards et l'analyse de problèmes réseau sur une infrastructure de caméras IP.</p>
+              <div class="experience-tags"><span>Zabbix</span><span>Grafana</span><span>Docker</span><span>Windows</span><span>Réseaux</span></div>
+            </div>
+          </article>
+          <article class="experience">
+            <div class="experience-date mono">2024</div>
+            <div class="experience-main">
+              <div class="experience-top"><div><h3>Électricien réseaux</h3><p>Filamant34 <span>·</span> Auberchicourt</p></div><span class="type">MISSION</span></div>
+              <p>Installation et intervention sur des systèmes électriques pour des enseignes commerciales. Une expérience terrain qui a renforcé ma rigueur, mon autonomie et mon rapport aux contraintes opérationnelles.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        // Effet de lueur au mouvement de la souris
-        const glow = document.getElementById('glow');
-        window.onmousemove = (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-            glow.style.transform = `translate(${x - 200}px, ${y - 200}px)`;
-        };
+    <section id="projets" class="section section-projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-index mono">04 / PROJETS</p>
+          <h2>Je préfère<br><em>montrer</em> que promettre.</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project project-large">
+            <div class="project-top"><span class="project-id mono">01</span><span class="project-kind">PERSONAL INFRA</span></div>
+            <h3>Home Lab<br><span>self-hosted</span></h3>
+            <p>Un environnement personnel basé sur Raspberry Pi et Docker pour expérimenter l'hébergement, la supervision, les sauvegardes, les services réseau et l'automatisation.</p>
+            <div class="project-tech"><span>Docker</span><span>Portainer</span><span>Tailscale</span><span>Linux</span><span>Monitoring</span></div>
+          </article>
+          <article class="project">
+            <div class="project-top"><span class="project-id mono">02</span><span class="project-kind">WEB APP</span></div>
+            <h3>Équipementheque</h3>
+            <p>Application web de gestion de parc matériel développée dans le cadre de la formation : suivi des équipements et des données d'exploitation.</p>
+            <div class="project-tech"><span>JavaScript</span><span>React</span><span>Web</span></div>
+          </article>
+          <article class="project project-accent">
+            <div class="project-top"><span class="project-id mono">03</span><span class="project-kind">WEB / AUTOMATION</span></div>
+            <h3>Node Vault<br><span>Transfer</span></h3>
+            <p>Service de transfert de fichiers basé sur un mécanisme de code unique, conçu pour faciliter le partage d'archives volumineuses.</p>
+            <div class="project-tech"><span>Node.js</span><span>Discord</span><span>Web</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        // Animation d'apparition au défilement
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.15 });
+    <section class="section contact-section">
+      <div class="container contact">
+        <p class="section-index mono">05 / CONTACT</p>
+        <h2>Un projet.<br>Une équipe.<br><em>On en parle ?</em></h2>
+        <a class="contact-mail" href="mailto:audrendele@gmail.com">audrendele@gmail.com <span>↗</span></a>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/audren-deleplanque-71185823a" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="document/CV_Audren_DELEPLANQUE.pdf" target="_blank" rel="noreferrer">Télécharger mon CV ↗</a>
+          <a href="https://audrendeleplanque.github.io" target="_blank" rel="noreferrer noopener">Portfolio actuel ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        document.querySelectorAll('.section-reveal').forEach(el => observer.observe(el));
-
-        // Mise à jour de l'année
-        document.getElementById('year').innerText = new Date().getFullYear();
-
-        window.onload = calculateAge;
-    </script>
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Audren Deleplanque</span><span class="mono">INGÉNIEUR INFORMATIQUE · DEVSECOPS</span><a href="#top">Retour ↑</a></div></footer>
+  <script src="script.js"></script>
 </body>
 </html>
